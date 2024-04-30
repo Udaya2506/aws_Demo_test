@@ -1,0 +1,11 @@
+# Use a base image with Java installed
+FROM openjdk:11
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy the JAR file into the container
+COPY target/project.jar /usr/src/app
+
+# Specify the command to run the application when the container starts
+CMD ["java", "-jar", "project.jar"]
